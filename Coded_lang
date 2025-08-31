@@ -1,0 +1,46 @@
+import random as RC
+
+Command = input("Code or Decode ? ")
+letter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+rand1_txt = ""
+for i in range(1,4):
+    rand1_letter = RC.choice(letter)
+    rand1_txt += rand1_letter
+  
+rand2_txt = ""
+for i in range(1,4):
+    rand2_letter = RC.choice(letter)
+    rand2_txt += rand2_letter
+  
+
+
+#print(rand_txt) works fine
+
+
+if Command == "Code":
+    text = input("Enter your Message: ")
+    if len(Command)== 4:
+        if len(text) <3:
+            print(f"Successfully Coded {text[::-1]}")
+          
+        else:
+            new_text = text[1:]+text[0]
+            Coded_txt = rand1_txt+new_text+rand2_txt
+            print(f"Successfully Coded {Coded_txt}")
+
+elif Command == "Decode":
+    text = input("Enter your Message: ")
+    if len(Command)== 6:
+        if len(text)<3:
+            print(f"Successfully Decoded {text[::-1]}")
+        else:
+            new_txt = text[3:-3]
+            Decoded_txt = new_txt[-1]+new_txt[:-1]
+            print(f"Successfully Decoded your Message: {Decoded_txt}")
+
+else:
+    print("Invalid Command, please enter Code or Decode")
+    
+      
+          
